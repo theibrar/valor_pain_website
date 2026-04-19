@@ -2,7 +2,17 @@ import express from 'express';
 import nodemailer from 'nodemailer';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+console.log('Starting server...');
 dotenv.config();
+
+if (!process.env.DEEPSEEK_API_KEY) {
+  console.warn('WARNING: DEEPSEEK_API_KEY is not set in .env file');
+}
 
 const app = express();
 app.use(cors());
@@ -245,6 +255,15 @@ CONSTRAINTS:
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`SMTP Server running on port ${PORT}`);
+// Serve static files from the frontend build
+const distPath = path.join(__dirname, '../dist');
+app.use(express.static(distPath));
+
+// Handle SPAs - route all other requests to index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(distPath, 'index.html'));
+});
+
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Production server running on port ${PORT}`);
 });

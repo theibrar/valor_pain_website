@@ -17,7 +17,7 @@ const LeadFormSection: React.FC = () => {
     setFormState('submitting');
     
     try {
-      const response = await fetch('http://localhost:5001/api/consultation', {
+      const response = await fetch('/api/consultation', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
