@@ -24,9 +24,7 @@ app.use((req, reqRes, next) => {
   next();
 });
 
-app.get('/', (req, reqRes) => {
-  reqRes.send('SMTP Server is running');
-});
+// Removed legacy '/' route to allow static file serving
 
 const PORT = process.env.PORT || 5173;
 
