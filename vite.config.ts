@@ -29,5 +29,11 @@ export default defineConfig({
   },
   server: {
     allowedHosts: ['valorpainwellness.com'],
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5001',
+        changeOrigin: true,
+      },
+    },
   },
 })

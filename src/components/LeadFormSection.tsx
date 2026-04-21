@@ -239,12 +239,14 @@ const LeadFormSection: React.FC = () => {
                       onBlur={(e) => e.target.style.borderColor = 'var(--border)'}
                     >
                       <option value="" disabled>Select a treatment...</option>
-                      <option value="stem-cell">Stem Cell Therapy</option>
-                      <option value="prp">PRP Injection</option>
-                      <option value="joint-injections">Joint & Facet Injections</option>
-                      <option value="a2m">A2M Therapy</option>
-                      <option value="nerve-blocks">Nerve Root Blocks</option>
-                      <option value="scs">Spinal Cord Stimulation</option>
+                      <option value="musculoskeletal-relief">Musculoskeletal Relief</option>
+                      <option value="injury-recovery">Injury Recovery</option>
+                      <option value="advanced-chronic-care">Advanced Chronic Care</option>
+                      <option value="cartilage-joint-restoration">Cartilage & Joint Restoration</option>
+                      <option value="bone-tissue-regeneration">Bone & Tissue Regeneration</option>
+                      <option value="neurological-autoimmune-support">Neurological & Autoimmune Support</option>
+                      <option value="prp-therapy">PRP Therapy</option>
+                      <option value="regenerative-cellular-therapy">Regenerative Cellular Therapy</option>
                     </select>
                   </div>
 

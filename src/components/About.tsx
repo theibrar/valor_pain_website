@@ -104,11 +104,11 @@ const About: React.FC = () => {
             </h2>
             
             <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', marginBottom: '1.5rem', lineHeight: 1.7 }}>
-              At Valor Pain & Wellness, we believe in the body's profound ability to heal itself. Our practice focuses on delivering top-tier stem cell therapy and regenerative medicine directly to the source of your pain.
+              At Valor Pain & Wellness, we believe in the body's profound ability to heal itself. Our practice focuses on delivering top-tier regenerative medicine directly to the source of your pain.
             </p>
             
             <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', marginBottom: '3rem', lineHeight: 1.7 }}>
-              Rather than managing symptoms with temporary fixes, we introduce regenerative cells designed to repair chronic damage and restore function, allowing you to live a fuller, pain-free life.
+              Rather than managing symptoms with temporary fixes, we introduce bio-active signaling designed to repair chronic damage and restore function, allowing you to live a fuller, pain-free life.
             </p>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem' }}>

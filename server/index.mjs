@@ -8,10 +8,13 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 console.log('Starting server...');
-dotenv.config();
+dotenv.config({ path: path.join(__dirname, '.env') });
 
 if (!process.env.DEEPSEEK_API_KEY) {
   console.warn('WARNING: DEEPSEEK_API_KEY is not set in .env file');
+} else {
+  // Clean the API key in case of accidental spaces/newlines
+  process.env.DEEPSEEK_API_KEY = process.env.DEEPSEEK_API_KEY.trim();
 }
 
 const app = express();
@@ -26,7 +29,7 @@ app.use((req, reqRes, next) => {
 
 // Removed legacy '/' route to allow static file serving
 
-const PORT = process.env.PORT || 5173;
+const PORT = process.env.PORT || 5001;
 
 process.on('unhandledRejection', (reason, promise) => {
   console.error('Unhandled Rejection at:', promise, 'reason:', reason);
@@ -41,20 +44,32 @@ app.post('/api/consultation', async (req, res) => {
   const { name, email, phone, service, message } = req.body;
 
   // 1. Create a transporter
-  // Note: For production, use real SMTP settings in .env
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: parseInt(process.env.SMTP_PORT),
-    secure: process.env.SMTP_SECURE === 'true', // true for 465, false for other ports
+    secure: process.env.SMTP_SECURE === 'true',
     auth: {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASS,
     },
+    tls: {
+      // do not fail on invalid certs
+      rejectUnauthorized: false
+    }
+  });
+
+  // Verify connection configuration
+  transporter.verify(function (error, success) {
+    if (error) {
+      console.log('Transporter Verify Error:', error);
+    } else {
+      console.log("Server is ready to take our messages");
+    }
   });
 
   const serviceLabels = {
-    'stem-cell': 'Stem Cell Therapy',
-    'prp': 'PRP Injection',
+    'regenerative-cellular': 'Regenerative Cellular Therapy',
+    'prp': 'PRP Therapy',
     'joint-injections': 'Joint & Facet Injections',
     'a2m': 'A2M Therapy',
     'nerve-blocks': 'Nerve Root Blocks',
@@ -192,7 +207,7 @@ ABOUT VALOR PAIN & WELLNESS:
 - Hours: Mon-Fri 8:00 AM - 6:00 PM
 
 SERVICES WE OFFER:
-1. Stem Cell Therapy: Natural tissue repair using the body's own healing mechanisms.
+1. Regenerative Cellular Therapy: Natural tissue repair using advanced cellular signaling.
 2. PRP (Platelet-Rich Plasma): Using concentrated blood platelets to accelerate healing.
 3. Joint & Facet Injections: Targeted relief for localized joint pain and inflammation.
 4. A2M Therapy: Natural protein injections to prevent cartilage breakdown.
@@ -215,7 +230,7 @@ CONSTRAINTS:
 
   try {
     console.log('Sending request to Deepseek API...');
-    const response = await fetch('https://api.deepseek.com/chat/completions', {
+    let response = await fetch('https://api.deepseek.com/chat/completions', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${process.env.DEEPSEEK_API_KEY}`,
@@ -231,12 +246,41 @@ CONSTRAINTS:
       })
     });
 
-    console.log(`Deepseek API respond with status: ${response.status}`);
-    const data = await response.json();
+    let data = await response.json();
     
+    // Fallback to deepseek-chat if reasoner fails (common for busy servers or new keys)
+    if (data.error && (data.error.message.includes('not found') || data.error.message.includes('busy') || data.error.message.includes('overload'))) {
+      console.log('Deepseek-reasoner failed or busy. Falling back to deepseek-chat...');
+      response = await fetch('https://api.deepseek.com/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${process.env.DEEPSEEK_API_KEY}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          model: 'deepseek-chat',
+          messages: [
+            { role: 'system', content: systemPrompt },
+            ...messages
+          ],
+          stream: false
+        })
+      });
+      data = await response.json();
+    }
+
     if (data.error) {
-      console.error('Deepseek API Error Detail:', JSON.stringify(data.error, null, 2));
-      return res.status(500).json({ error: 'AI Assistant is temporarily unavailable.' });
+      console.error('Deepseek API Error:', JSON.stringify(data.error, null, 2));
+      const errorMsg = data.error.message || 'Unknown API Error';
+      
+      if (errorMsg.includes('balance') || data.error.code === 'insufficient_balance') {
+        return res.status(500).json({ error: 'AI Assistant needs credit. Please check Deepseek billing.' });
+      }
+      
+      return res.status(500).json({ 
+        error: 'AI Assistant is temporarily unavailable.',
+        details: errorMsg 
+      });
     }
 
     if (!data.choices || !data.choices[0]) {
@@ -258,7 +302,7 @@ const distPath = path.join(__dirname, '../dist');
 app.use(express.static(distPath));
 
 // Handle SPAs - route all other requests to index.html
-app.get('*', (req, res) => {
+app.use((req, res) => {
   res.sendFile(path.join(distPath, 'index.html'));
 });
 

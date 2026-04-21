@@ -1,4 +1,4 @@
-import { Activity, Syringe, HeartPulse, Dna, Brain, Zap, Stethoscope } from 'lucide-react';
+import { Activity, Syringe, HeartPulse, Dna, Brain, Zap, Stethoscope, Thermometer, ShieldAlert, Sparkles, Microscope, Pill } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 export interface ServiceContent {
@@ -9,209 +9,279 @@ export interface ServiceContent {
 export interface Service {
   id: string;
   title: string;
+  subtitle: string;
   icon: LucideIcon;
   shortDescription: string;
   heroImage: string;
   content: ServiceContent[];
   benefits: string[];
+  whyChooseUs: string[];
   gallery?: string[];
 }
 
 export const servicesData: Record<string, Service> = {
-  'stem-cell-therapy': {
-    id: 'stem-cell-therapy',
-    title: 'Stem Cell Therapy',
-    icon: Dna,
-    shortDescription: 'Harness your body\'s natural healing mechanisms to repair damaged tissues from the inside out.',
+  'musculoskeletal-relief': {
+    id: 'musculoskeletal-relief',
+    title: 'Musculoskeletal Relief',
+    subtitle: 'Regenevise',
+    icon: Activity,
+    shortDescription: 'Comprehensive regenerative solutions for chronic neck, back, and joint pain.',
     heroImage: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=2000',
     content: [
       {
-        heading: 'What is Stem Cell Therapy?',
-        text: 'Stem Cell Therapy is a groundbreaking regenerative treatment that utilizes the body’s own healing potential. By introducing concentrated, potent stem cells into damaged tissues, we can stimulate repair and regeneration, offering a profound alternative to surgical interventions.'
+        heading: 'Precision Pain Management',
+        text: 'Musculoskeletal pain often stems from underlying structural issues that traditional medicine masks with temporary fixes. At Valor Pain & Wellness, our Musculoskeletal Relief program uses Regenevise protocols to target the cellular source of your discomfort. We focus on identifying the exact ligaments, tendons, and joints that have lost their integrity, providing a roadmap for true recovery.'
       },
       {
-        heading: 'How Does It Work?',
-        text: 'Stem cells are undifferentiated cells capable of transforming into specific cell types, such as cartilage, muscle, or tendon cells. During the procedure, we inject these carefully sourced cells under advanced image guidance directly into the site of injury or degeneration. Once there, they reduce inflammation and signal the body to accelerate its natural repair processes.'
+        heading: 'Advanced Diagnostic Mapping',
+        text: 'Every treatment begins with high-resolution diagnostic imaging and a comprehensive biomechanical assessment. We don\'t just treat the symptom; we analyze your movement patterns to understand why the pain occurred in the first place. This holistic view allows us to apply regenerative therapies where they will have the most significant impact on your mobility.'
       },
       {
-        heading: 'Conditions Treated',
-        text: 'This therapy is highly effective for osteoarthritis, chronic joint pain (knees, hips, shoulders), degenerated discs, and severe tendon or ligament tears that have not responded uniformly to traditional conservative methods.'
+        heading: 'The Regenevise Difference',
+        text: 'Our musculoskeletal protocols utilize bio-active signaling molecules that encourage your body to repair micro-tears and reduce localized inflammation. This results in a stronger, more resilient musculoskeletal system capable of supporting an active, pain-free lifestyle without the need for steroid dependency.'
       }
     ],
-    benefits: ['Avoid Invasive Surgery', 'Natural Healing Process', 'Reduced Recovery Time', 'Long-Lasting Relief'],
+    benefits: ['Targeted Pain Reduction', 'Structural Tissue Strengthening', 'Restored Range of Motion', 'Reduced Dependency on Pain Meds'],
+    whyChooseUs: [
+      'Evidence-based regenerative protocols',
+      'Minimally invasive, outpatient procedures',
+      'Personalized biomechanical rehabilitation plans',
+      'Advanced image-guided injection precision'
+    ],
     gallery: [
       'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1631815541551-3796cd8ce992?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1512677855366-20e5e315727a?auto=format&fit=crop&q=80&w=800'
+      'https://images.unsplash.com/photo-1584362917165-526a968579e8?auto=format&fit=crop&q=80&w=800'
     ]
   },
-  'prp-injection': {
-    id: 'prp-injection',
-    title: 'PRP (Platelet-Rich Plasma)',
-    icon: HeartPulse,
-    shortDescription: 'Accelerate the healing of injured tendons, ligaments, muscles and joints using your own platelets.',
-    heroImage: 'https://images.unsplash.com/photo-1584362917165-526a968579e8?auto=format&fit=crop&q=80&w=2000',
-    content: [
-      {
-        heading: 'The Power of Platelet-Rich Plasma',
-        text: 'Platelet-Rich Plasma (PRP) therapy utilizes a concentrated portion of your own blood to promote accelerated healing. Platelets are heavily concentrated with growth factors—proteins essential for tissue repair and regeneration.'
-      },
-      {
-        heading: 'The Treatment Process',
-        text: 'A small sample of your blood is drawn and spun in a centrifuge to separate the platelet-rich plasma from red blood cells. The highly concentrated PRP is then precisely injected into the injured or arthritic area. The growth factors jumpstart the healing cascade, recruiting stem cells and encouraging new tissue growth.'
-      },
-      {
-        heading: 'Ideal Candidates',
-        text: 'PRP is an excellent option for sports injuries, rotator cuff tears, tennis elbow, plantar fasciitis, and early-stage osteoarthritis.'
-      }
-    ],
-    benefits: ['Uses Your Own Body\'s Cells', 'Safe Outpatient Procedure', 'Improves Joint Function', 'Stops Tissue Degeneration'],
-    gallery: [
-      'https://images.unsplash.com/photo-1584362917165-526a968579e8?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1504813184581-01e72f54c165?auto=format&fit=crop&q=80&w=800'
-    ]
-  },
-  'joint-injections': {
-    id: 'joint-injections',
-    title: 'Joint & Facet Injections',
-    icon: Syringe,
-    shortDescription: 'Targeted relief for localized pain and inflammation in specific joints to improve mobility.',
-    heroImage: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=2000',
-    content: [
-      {
-        heading: 'Immediate and Targeted Relief',
-        text: 'Joint and facet joint injections are minimally invasive procedures designed to reduce inflammation and swelling directly at the source of the pain. These injections typically consist of a local anesthetic combined with a corticosteroid.'
-      },
-      {
-        heading: 'Facet Joint Interventions',
-        text: 'Facet joints connect the vertebrae in your spine. When these become arthritic or irritated, they cause significant neck or back pain. Injecting medication specifically into these joints can provide dramatic relief and help us confirm the exact source of your pain.'
-      },
-      {
-        heading: 'Comprehensive Joint Care',
-        text: 'Whether it’s the knee, hip, shoulder, or spinal facet joints, our precisely guided injections (using fluoroscopy or ultrasound) ensure the medication reaches the precise location for maximum efficacy.'
-      }
-    ],
-    benefits: ['Rapid Pain Relief', 'Diagnostic and Therapeutic', 'Minimally Invasive', 'Restores Mobility Quickly'],
-    gallery: [
-      'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1551076805-e18690c5e530?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&q=80&w=800'
-    ]
-  },
-  'a2m-therapy': {
-    id: 'a2m-therapy',
-    title: 'A2M Therapy',
-    icon: Activity,
-    shortDescription: 'Alpha-2-Macroglobulin injections to prevent cartilage breakdown and reduce joint pain naturally.',
-    heroImage: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=2000',
-    content: [
-      {
-        heading: 'Halting Joint Degeneration',
-        text: 'Alpha-2-Macroglobulin (A2M) is a powerful, naturally occurring protein found in your blood plasma. Its unique property is its ability to bind to and neutralize the enzymes (proteases) that break down cartilage in osteoarthritic joints.'
-      },
-      {
-        heading: 'How A2M Protects You',
-        text: 'In an arthritic joint, destructive chemicals outnumber healing chemicals. By extracting A2M from your blood, concentrating it, and re-injecting it into the affected joint, we can physically trap the destructive enzymes. This halts the progression of osteoarthritis and prevents further joint damage.'
-      },
-      {
-        heading: 'The Future of Arthritis Treatment',
-        text: 'Unlike steroids which only mask pain, A2M addresses the actual chemical cause of cartilage breakdown, making it an advanced preventative and therapeutic tool.'
-      }
-    ],
-    benefits: ['Stops Cartilage Destruction', 'Reduces Joint Swelling', 'Natural Protein', 'Prevents Future Damage'],
-    gallery: [
-      'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1584362917165-526a968579e8?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=800'
-    ]
-  },
-  'nerve-blocks': {
-    id: 'nerve-blocks',
-    title: 'Nerve Root Blocks',
-    icon: Brain,
-    shortDescription: 'Diagnostic and therapeutic injections to alleviate pain originating from inflamed spinal nerves.',
-    heroImage: 'https://images.unsplash.com/photo-1551076805-e18690c5e530?auto=format&fit=crop&q=80&w=2000',
-    content: [
-      {
-        heading: 'Targeting Nerve Pain at the Source',
-        text: 'A selective nerve root block is an injection that delivers medication directly into the space around a specific spinal nerve root. This is performed when a nerve is pinched or inflamed due to a herniated disc or spinal stenosis.'
-      },
-      {
-        heading: 'Dual Purpose Procedure',
-        text: 'Diagnostic: If your pain disappears immediately after the anesthetic is injected, we have successfully identified the highly specific nerve causing your distress. Therapeutic: The corticosteroid provides long-term reduction in inflammation and pain.'
-      },
-      {
-        heading: 'Relief for Sciatica and Radiculopathy',
-        text: 'For patients suffering from sharp, shooting pains down their arms or legs, nerve root blocks offer a non-surgical avenue to significant relief and restored function.'
-      }
-    ],
-    gallery: [
-      'https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1631815541551-3796cd8ce992?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1551076805-e18690c5e530?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&q=80&w=800'
-    ],
-    benefits: ['Pinpoints Pain Generator', 'Relieves Shooting Nerve Pain', 'Outpatient Procedure', 'Improves Physical Therapy Options']
-  },
-  'spinal-cord-stimulation': {
-    id: 'spinal-cord-stimulation',
-    title: 'Spinal Cord Stimulation',
+  'injury-recovery': {
+    id: 'injury-recovery',
+    title: 'Injury Recovery',
+    subtitle: 'Regenevise',
     icon: Zap,
-    shortDescription: 'Advanced neurostimulation techniques for managing chronic, intractable pain syndromes.',
+    shortDescription: 'Accelerated healing protocols designed to return athletes and active individuals to peak performance.',
+    heroImage: 'https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&q=80&w=2000',
+    content: [
+      {
+        heading: 'Rapid Healing for Acute Injuries',
+        text: 'Whether it\'s a ligament sprain, a muscle tear, or a stress fracture, the traditional "rest and ice" approach is often insufficient for high-performance recovery. Our Injury Recovery program integrates Regenevise cellular therapies to jumpstart the body\'s natural repair cascade, significantly shortening the downtime between injury and action.'
+      },
+      {
+        heading: 'Bio-Acceleration Technology',
+        text: 'We utilize concentrated growth factors and cellular signaling to create an optimal healing environment at the site of injury. By flooding the damaged tissue with the nutrients and cells it needs most, we prevent the formation of excessive scar tissue, ensuring that the healed tissue is as strong and flexible as the original.'
+      },
+      {
+        heading: 'Performance-First Approach',
+        text: 'Recovery isn\'t just about healing; it\'s about coming back stronger. Our team works closely with physical therapists to ensure that your regenerative treatment is perfectly timed with your rehabilitation, maximizing the strength of the new tissue and correcting any compensatory patterns.'
+      }
+    ],
+    benefits: ['50% Faster Recovery Times', 'Superior Tissue Quality', 'Prevention of Chronic Weakness', 'Safe for All Competitive Levels'],
+    whyChooseUs: [
+      'Trusted by amateur and professional athletes',
+      'Cutting-edge cellular signaling technology',
+      'Integrated recovery and rehab monitoring',
+      'Non-surgical alternative to career-ending procedures'
+    ],
+    gallery: [
+      'https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800'
+    ]
+  },
+  'advanced-chronic-care': {
+    id: 'advanced-chronic-care',
+    title: 'Advanced Chronic Care',
+    subtitle: 'Regenevise',
+    icon: HeartPulse,
+    shortDescription: 'Holistic management of complex chronic conditions and long-term inflammatory issues.',
     heroImage: 'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&q=80&w=2000',
     content: [
       {
-        heading: 'Modulating Pain Signals',
-        text: 'Spinal Cord Stimulation (SCS) is an advanced technology used to treat severe, chronic pain that hasn’t responded to other treatments. It involves a small implanted device that sends mild electrical pulses to the spinal cord.'
+        heading: 'Treating the Whole System',
+        text: 'Chronic illness and pain are often symptoms of systemic inflammation and immune dysregulation. Our Advanced Chronic Care program looks beyond localized symptoms to address the root causes of your health challenges, utilizing Regenevise integrative protocols to restore balance to your body.'
       },
       {
-        heading: 'Intercepting Pain',
-        text: 'These electrical pulses intercept pain signals before they reach the brain. Instead of feeling pain, patients often feel a gentle, soothing tingling sensation, or with newer high-frequency devices, no sensation at all—just profound pain relief.'
+        heading: 'Immune System Modulation',
+        text: 'Many chronic conditions are driven by an overactive or misdirected immune response. We use regenerative biologics to help "reset" the immune signaling pathways, reducing systemic inflammation and allowing your organs and tissues to function at their highest capacity once again.'
       },
       {
-        heading: 'The Trial Period',
-        text: 'One of the greatest benefits of SCS is the trial phase. Before committing to a permanent implant, patients undergo a 5-7 day trial with external equipment to ensure the therapy successfully alleviates their specific pain.'
+        heading: 'Long-term Health Maintenance',
+        text: 'Chronic care isn\'t a one-time procedure; it\'s a journey. Our program includes ongoing monitoring and support, combining advanced regenerative treatments with lifestyle and nutritional guidance to ensure that your results are sustainable for years to come.'
       }
     ],
-    benefits: ['Reversible and Testable', 'Reduces Reliance on Medications', 'Targets Severe, Chronic Pain', 'Customizable Relief'],
+    benefits: ['Reduced Systemic Inflammation', 'Enhanced Energy and Vitality', 'Better Management of Autoimmune Symptoms', 'Improved Long-term Prognosis'],
+    whyChooseUs: [
+      'Comprehensive whole-body health assessment',
+      'Specialized protocols for immune modulation',
+      'Dedicated long-term wellness partnership',
+      'Focus on root-cause resolution, not just symptoms'
+    ],
     gallery: [
       'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1516398841057-3f301140033d?auto=format&fit=crop&q=80&w=800'
+      'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=800'
     ]
   },
-  'electrodiagnosis': {
-    id: 'electrodiagnosis',
-    title: 'Electrodiagnosis',
-    icon: Stethoscope,
-    shortDescription: 'Comprehensive nerve conduction studies to accurately diagnose the root source of your nerve pain.',
-    heroImage: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=2000',
+  'cartilage-joint-restoration': {
+    id: 'cartilage-joint-restoration',
+    title: 'Cartilage & Joint Restoration',
+    subtitle: 'Regenevise',
+    icon: Syringe,
+    shortDescription: 'Advanced joint resurfacing and cartilage repair without the need for invasive surgery.',
+    heroImage: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&q=80&w=2000',
     content: [
       {
-        heading: 'Uncovering the Blueprint of Your Nerves',
-        text: 'Electrodiagnostic testing, primarily consisting of Electromyography (EMG) and Nerve Conduction Studies (NCS), evaluates the health and function of your muscles and the nerves that control them.'
+        heading: 'The Science of Joint Regeneration',
+        text: 'Osteoarthritis and degenerative joint disease were once thought to be irreversible. Regenevise Cartilage & Joint Restoration changes that narrative. By introducing concentrated cellular building blocks directly into the joint space, we can stimulate the production of new hyaline-like cartilage and improve the quality of synovial fluid.'
       },
       {
-        heading: 'Why is it Performed?',
-        text: 'When patients experience symptoms like numbness, tingling, weakness, or unexplained muscle cramping, electrodiagnosis helps pinpoint whether the issue lies in the spinal cord, a peripheral nerve, or the muscle itself. It is critical for diagnosing conditions like Carpal Tunnel Syndrome or Radiculopathy.'
+        heading: 'Precision Resurfacing',
+        text: 'Our treatments act like a biological "resurfacing" for your joints. The regenerative cells settle into the damaged areas of the cartilage, filling in micro-defects and smoothing out the joint surface. This leads to a dramatic reduction in friction and pain, allowing for much smoother, fluid movement.'
       },
       {
-        heading: 'Guiding Treatment',
-        text: 'By accurately mapping nerve damage and locating compression sites, we can tailor a precise treatment plan—ensuring we treat the exact underlying cause of your symptoms, rather than just guessing.'
+        heading: 'Avoiding Total Joint Replacement',
+        text: 'For many patients, this program offers a viable alternative to total knee or hip replacement. By intervening with regenerative therapies, we can preserve your natural joint anatomy and delay or entirely avoid the need for major orthopedic surgery and its associated risks.'
       }
     ],
-    benefits: ['Accurate Diagnosis', 'Locates Nerve Damage', 'Measures Nerve Healing', 'Drives Targeted Treatment Plans'],
+    benefits: ['Delayed Need for Surgery', 'Natural Joint Lubrication', 'Smoother, Pain-Free Movement', 'Permanent Tissue Improvement'],
+    whyChooseUs: [
+      'Specialized in late-stage joint degeneration',
+      'Natural alternative to metallic implants',
+      'Minimal recovery time compared to surgery',
+      'Advanced fluoroscopic guidance for every injection'
+    ],
     gallery: [
-      'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1512418490278-d42f096d2d3e?auto=format&fit=crop&q=80&w=800'
+      'https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800'
+    ]
+  },
+  'bone-tissue-regeneration': {
+    id: 'bone-tissue-regeneration',
+    title: 'Bone & Tissue Regeneration',
+    subtitle: 'Regenevise',
+    icon: Microscope,
+    shortDescription: 'Deep cellular healing for bone fractures, non-unions, and chronic soft tissue degeneration.',
+    heroImage: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=2000',
+    content: [
+      {
+        heading: 'Cellular Bone Healing',
+        text: 'Complex fractures and bone density issues require more than just stabilization. Our Bone & Tissue Regeneration program uses Regenevise protocols to deliver high concentrations of bio-active signaling molecules, encouraging rapid bone remodeling and increased mineral density at the site of concern.'
+      },
+      {
+        heading: 'Deep Tissue Structural Repair',
+        text: 'For chronic issues like deep muscle scarring or degenerative tendonosis, we apply advanced regenerative techniques to break down dysfunctional tissue and replace it with healthy, organized fibers. This restores the structural integrity of the tissue, preventing future ruptures.'
+      },
+      {
+        heading: 'Bio-Scaffolding Technology',
+        text: 'In cases of significant tissue loss, we utilize natural bio-scaffolds that provide a structure for your own cells to grow into. This innovative approach allows for the regeneration of complex tissue structures that were previously considered permanently damaged.'
+      }
+    ],
+    benefits: ['Faster Fracture Union', 'Increased Bone Mineral Density', 'Deep Structural Repair', 'Long-term Tissue Integrity'],
+    whyChooseUs: [
+      'Pioneers in bio-scaffolding technology',
+      'Expertise in non-healing bone fractures',
+      'High-potency cellular growth factor protocols',
+      'Comprehensive structural assessment'
+    ],
+    gallery: [
+      'https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&q=80&w=800'
+    ]
+  },
+  'neurological-autoimmune-support': {
+    id: 'neurological-autoimmune-support',
+    title: 'Neurological & Autoimmune Support',
+    subtitle: 'Regenevise',
+    icon: Brain,
+    shortDescription: 'Supportive regenerative therapies for nerve health and immune system balance through regenerative approaches.',
+    heroImage: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&q=80&w=2000',
+    content: [
+      {
+        heading: 'Neuro-Regenerative Protocols',
+        text: 'Nerve damage was long considered permanent, but new advances in regenerative medicine are showing promise in supporting nerve health and repair. Our Neurological Support program focuses on reducing neuro-inflammation and providing the neurotrophic factors necessary for nerve sheath repair and signaling improvement.'
+      },
+      {
+        heading: 'Autoimmune Modulation',
+        text: 'Autoimmune conditions arise when the immune system attacks healthy tissue. We use Regenevise protocols to help "re-educate" the immune system, utilizing regenerative signaling to promote an anti-inflammatory environment that protects your nerves and vital tissues from further damage.'
+      },
+      {
+        heading: 'Cognitive and Peripheral Wellness',
+        text: 'Whether you are dealing with peripheral neuropathy or seeking to support overall brain health, our comprehensive approach addresses both the central and peripheral nervous systems. We aim to improve signaling efficiency and reduce the "brain fog" often associated with chronic inflammatory states.'
+      }
+    ],
+    benefits: ['Support for Nerve Repair', 'Reduced Neuro-inflammation', 'Balanced Immune Response', 'Improved Neural Signaling'],
+    whyChooseUs: [
+      'Advanced neuro-regenerative expertise',
+      'Innovative immune-modulating biologics',
+      'Focus on protecting and repairing neural pathways',
+      'Holistic approach to neurological wellness'
+    ],
+    gallery: [
+      'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&q=80&w=800'
+    ]
+  },
+  'prp-therapy': {
+    id: 'prp-therapy',
+    title: 'PRP Therapy',
+    subtitle: 'Regenevise',
+    icon: HeartPulse,
+    shortDescription: 'Concentrated Platelet-Rich Plasma treatments to accelerate natural tissue healing.',
+    heroImage: 'https://images.unsplash.com/photo-1584362917165-526a968579e8?auto=format&fit=crop&q=80&w=2000',
+    content: [
+      {
+        heading: 'The Power of Your Own Platelets',
+        text: 'Platelet-Rich Plasma (PRP) therapy is a cornerstone of regenerative medicine. By concentrating the healing factors found in your own blood, we can deliver a potent biological "boost" directly to injured or degenerated tissues, triggering an accelerated repair process.'
+      },
+      {
+        heading: 'Growth Factor Optimization',
+        text: 'Our PRP protocols focus on maximizing the concentration of growth factors while minimizing inflammatory white blood cells. This results in a cleaner, more effective therapeutic sample that stimulates cellular migration and collagen production without excessive localized irritation.'
+      },
+      {
+        heading: 'Clinical Applications',
+        text: 'PRP is highly effective for treating chronic tendonitis (like tennis elbow or Achilles issues), ligament strains, and early-stage joint wear. It offers a safe, natural alternative to corticosteroid injections, which can often weaken tissue over time.'
+      }
+    ],
+    benefits: ['100% Autologous (Uses Your Own Blood)', 'Accelerated Soft Tissue Healing', 'Reduces Chronic Inflammation', 'Safe and Repeatable Procedure'],
+    whyChooseUs: [
+      'High-concentration, leukocyte-poor PRP protocols',
+      'Advanced centrifuge technology for pure samples',
+      'Precise ultrasound-guided injections',
+      'Natural alternative to steroid injections'
+    ],
+    gallery: [
+      'https://images.unsplash.com/photo-1584362917165-526a968579e8?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=800'
+    ]
+  },
+  'regenerative-cellular-therapy': {
+    id: 'regenerative-cellular-therapy',
+    title: 'Regenerative Cellular Therapy',
+    subtitle: 'Regenevise',
+    icon: Sparkles,
+    shortDescription: 'Advanced cellular signaling and regenerative medicine for complex tissue repair.',
+    heroImage: 'https://images.unsplash.com/photo-1582560475093-ba66accbc424?auto=format&fit=crop&q=80&w=2000',
+    content: [
+      {
+        heading: 'Next-Generation Bio-Medicine',
+        text: 'Our Regenerative Cellular Therapy represents the pinnacle of modern non-surgical medicine. We utilize bio-active cellular signaling to communicate with your body\'s dormant repair systems, telling them exactly where and how to begin the regeneration process in damaged or diseased tissues.'
+      },
+      {
+        heading: 'Precision Cellular Signaling',
+        text: 'This therapy doesn\'t just mask pain; it addresses the underlying biological deficit. By providing the environment and the instructions needed for cellular repair, we help your body rebuild lost structure and restore function that was previously considered gone.'
+      },
+      {
+        heading: 'A Personalized Biological Approach',
+        text: 'Every Regenerative Cellular treatment is tailored to the patient\'s specific condition and severity. We combine these advanced biologics with precise image guidance to ensure that the maximum therapeutic dose reaches the target tissue for optimal results.'
+      }
+    ],
+    benefits: ['True Tissue Regeneration', 'Avoidance of Invasive Surgery', 'Long-lasting Structural Improvement', 'Enhanced Quality of Life'],
+    whyChooseUs: [
+      'Leaders in cellular signaling science',
+      'State-of-the-art regenerative protocols',
+      'Minimally invasive outpatient care',
+      'Compassionate, expert medical team'
+    ],
+    gallery: [
+      'https://images.unsplash.com/photo-1582560475093-ba66accbc424?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=800'
     ]
   }
 };

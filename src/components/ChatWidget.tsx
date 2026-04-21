@@ -49,12 +49,18 @@ const ChatWidget: React.FC = () => {
         })
       });
 
+      let data;
+      const responseText = await response.text();
+      try {
+        data = JSON.parse(responseText);
+      } catch (e) {
+        throw new Error(`Invalid server response. Please check if the backend is running.`);
+      }
+
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to get response');
+        throw new Error(data.error || `Server error: ${response.status}`);
       }
       
-      const data = await response.json();
       setMessages(prev => [...prev, { role: 'assistant', content: data.content }]);
     } catch (error: any) {
       console.error('Chat error details:', error);

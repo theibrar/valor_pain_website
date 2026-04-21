@@ -82,30 +82,129 @@ const ServiceDetailPage: React.FC = () => {
                   viewport={{ once: true }} 
                   transition={{ delay: idx * 0.1 }}
                   key={idx} 
-                  style={{ marginBottom: '3rem' }}
+                  style={{ marginBottom: '4rem' }}
                 >
-                  <h3 style={{ fontSize: '1.75rem', marginBottom: '1rem', color: 'var(--primary)' }}>{section.heading}</h3>
-                  <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', lineHeight: 1.8 }}>{section.text}</p>
+                  <h3 style={{ 
+                    fontSize: '2rem', 
+                    marginBottom: '1.25rem', 
+                    color: 'var(--primary)',
+                    fontFamily: 'var(--font-serif)',
+                    borderLeft: '4px solid var(--secondary)',
+                    paddingLeft: '1.5rem'
+                  }}>
+                    {section.heading}
+                  </h3>
+                  <p style={{ fontSize: '1.15rem', color: '#475569', lineHeight: 1.8 }}>{section.text}</p>
                 </motion.div>
               ))}
 
+              {/* Why Choose Us Section */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                style={{ 
+                  marginTop: '5rem', 
+                  padding: '4rem 3rem', 
+                  backgroundColor: '#f1f5f9', 
+                  borderRadius: '32px',
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}
+              >
+                {/* Decorative background element */}
+                <div style={{
+                  position: 'absolute',
+                  top: '-50px',
+                  right: '-50px',
+                  width: '200px',
+                  height: '200px',
+                  borderRadius: '50%',
+                  background: 'radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%)',
+                  zIndex: 0
+                }} />
+
+                <h3 style={{ 
+                  fontSize: '2.25rem', 
+                  marginBottom: '3rem', 
+                  color: '#1B3A5C',
+                  fontFamily: 'var(--font-serif)',
+                  textAlign: 'center',
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  Why Choose Us for {service.title}
+                </h3>
+                
+                <div style={{ 
+                  display: 'grid', 
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+                  gap: '2rem',
+                  position: 'relative',
+                  zIndex: 1
+                }}>
+                  {service.whyChooseUs.map((item, idx) => (
+                    <motion.div 
+                      key={idx}
+                      whileHover={{ translateY: -5 }}
+                      style={{ 
+                        backgroundColor: 'white',
+                        padding: '2rem',
+                        borderRadius: '20px',
+                        display: 'flex',
+                        gap: '1.25rem',
+                        alignItems: 'flex-start',
+                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                        border: '1px solid #e2e8f0'
+                      }}
+                    >
+                      <div style={{ 
+                        width: '44px', 
+                        height: '44px', 
+                        borderRadius: '12px', 
+                        backgroundColor: 'rgba(59, 130, 246, 0.1)', 
+                        color: 'var(--secondary)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        flexShrink: 0
+                      }}>
+                        <CheckCircle2 size={24} />
+                      </div>
+                      <p style={{ 
+                        fontWeight: 600, 
+                        color: '#1B3A5C', 
+                        fontSize: '1.15rem',
+                        lineHeight: 1.4,
+                        margin: 0,
+                        paddingTop: '0.5rem'
+                      }}>
+                        {item}
+                      </p>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+
               {/* Gallery Addition */}
               {service.gallery && (
-                <div style={{ marginTop: '2rem' }}>
-                  <h3 style={{ fontSize: '1.75rem', marginBottom: '1.5rem', color: 'var(--primary)' }}>Procedure Visuals</h3>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem' }}>
+                <div style={{ marginTop: '5rem' }}>
+                  <h3 style={{ fontSize: '2rem', marginBottom: '2rem', color: 'var(--primary)', fontFamily: 'var(--font-serif)' }}>
+                    Procedure Visuals
+                  </h3>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem' }}>
                     {service.gallery.map((img, i) => (
                       <motion.div 
                         key={i}
-                        initial={{ opacity: 0, scale: 0.9 }}
+                        initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.1 }}
                         style={{ 
-                          borderRadius: '12px', 
+                          borderRadius: '20px', 
                           overflow: 'hidden', 
-                          aspectRatio: '1',
-                          boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)'
+                          aspectRatio: '16/10',
+                          boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1)'
                         }}
                       >
                         <img 
