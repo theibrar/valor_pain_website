@@ -28,10 +28,11 @@ export default defineConfig({
     chunkSizeWarningLimit: 1000,
   },
   server: {
+    port: 5174,
     allowedHosts: ['valorpainwellness.com'],
     proxy: {
       '/api': {
-        target: 'http://localhost:5001',
+        target: 'http://localhost:5173',
         changeOrigin: true,
       },
     },

@@ -30,7 +30,7 @@ app.use((req, reqRes, next) => {
 
 // Removed legacy '/' route to allow static file serving
 
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 5173;
 
 process.on('uncaughtException', (err) => {
   console.error('Uncaught Exception:', err);
