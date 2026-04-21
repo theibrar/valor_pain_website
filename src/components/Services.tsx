@@ -124,14 +124,16 @@ const Services: React.FC = () => {
                 }}>
                   {service.title}
                 </h3>
-                <p style={{ 
-                  color: '#64748B', 
-                  fontSize: '1.1rem', 
-                  fontWeight: 500,
-                  fontFamily: 'var(--font-sans)'
-                }}>
-                  {service.subtitle}
-                </p>
+                {service.subtitle && (
+                  <p style={{ 
+                    color: '#64748B', 
+                    fontSize: '1.1rem', 
+                    fontWeight: 500,
+                    fontFamily: 'var(--font-sans)'
+                  }}>
+                    {service.subtitle}
+                  </p>
+                )}
                 
                 <p style={{ 
                   color: '#475569', 

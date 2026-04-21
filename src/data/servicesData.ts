@@ -23,7 +23,7 @@ export const servicesData: Record<string, Service> = {
   'musculoskeletal-relief': {
     id: 'musculoskeletal-relief',
     title: 'Musculoskeletal Relief',
-    subtitle: 'Advanced Protocol',
+    subtitle: '',
     icon: Activity,
     shortDescription: 'Comprehensive regenerative solutions for chronic neck, back, and joint pain.',
     heroImage: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=2000',
@@ -56,7 +56,7 @@ export const servicesData: Record<string, Service> = {
   'injury-recovery': {
     id: 'injury-recovery',
     title: 'Injury Recovery',
-    subtitle: 'Advanced Protocol',
+    subtitle: '',
     icon: Zap,
     shortDescription: 'Accelerated healing protocols designed to return athletes and active individuals to peak performance.',
     heroImage: 'https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&q=80&w=2000',
@@ -89,7 +89,7 @@ export const servicesData: Record<string, Service> = {
   'advanced-chronic-care': {
     id: 'advanced-chronic-care',
     title: 'Advanced Chronic Care',
-    subtitle: 'Advanced Protocol',
+    subtitle: '',
     icon: HeartPulse,
     shortDescription: 'Holistic management of complex chronic conditions and long-term inflammatory issues.',
     heroImage: 'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&q=80&w=2000',
@@ -122,7 +122,7 @@ export const servicesData: Record<string, Service> = {
   'cartilage-joint-restoration': {
     id: 'cartilage-joint-restoration',
     title: 'Cartilage & Joint Restoration',
-    subtitle: 'Advanced Protocol',
+    subtitle: '',
     icon: Syringe,
     shortDescription: 'Advanced joint resurfacing and cartilage repair without the need for invasive surgery.',
     heroImage: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&q=80&w=2000',
@@ -155,7 +155,7 @@ export const servicesData: Record<string, Service> = {
   'bone-tissue-regeneration': {
     id: 'bone-tissue-regeneration',
     title: 'Bone & Tissue Regeneration',
-    subtitle: 'Advanced Protocol',
+    subtitle: '',
     icon: Microscope,
     shortDescription: 'Deep cellular healing for bone fractures, non-unions, and chronic soft tissue degeneration.',
     heroImage: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=2000',
@@ -188,7 +188,7 @@ export const servicesData: Record<string, Service> = {
   'neurological-autoimmune-support': {
     id: 'neurological-autoimmune-support',
     title: 'Neurological & Autoimmune Support',
-    subtitle: 'Advanced Protocol',
+    subtitle: '',
     icon: Brain,
     shortDescription: 'Supportive regenerative therapies for nerve health and immune system balance through regenerative approaches.',
     heroImage: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&q=80&w=2000',
@@ -221,7 +221,7 @@ export const servicesData: Record<string, Service> = {
   'prp-therapy': {
     id: 'prp-therapy',
     title: 'PRP Therapy',
-    subtitle: 'Advanced Protocol',
+    subtitle: '',
     icon: HeartPulse,
     shortDescription: 'Concentrated Platelet-Rich Plasma treatments to accelerate natural tissue healing.',
     heroImage: 'https://images.unsplash.com/photo-1584362917165-526a968579e8?auto=format&fit=crop&q=80&w=2000',
@@ -254,7 +254,7 @@ export const servicesData: Record<string, Service> = {
   'regenerative-cellular-therapy': {
     id: 'regenerative-cellular-therapy',
     title: 'Regenerative Cellular Therapy',
-    subtitle: 'Advanced Protocol',
+    subtitle: '',
     icon: Sparkles,
     shortDescription: 'Advanced cellular signaling and regenerative medicine for complex tissue repair.',
     heroImage: 'https://images.unsplash.com/photo-1582560475093-ba66accbc424?auto=format&fit=crop&q=80&w=2000',
