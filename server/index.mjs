@@ -3,6 +3,7 @@ import nodemailer from 'nodemailer';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import path from 'path';
+import fs from 'fs';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -30,6 +31,10 @@ app.use((req, reqRes, next) => {
 // Removed legacy '/' route to allow static file serving
 
 const PORT = process.env.PORT || 5001;
+
+process.on('uncaughtException', (err) => {
+  console.error('Uncaught Exception:', err);
+});
 
 process.on('unhandledRejection', (reason, promise) => {
   console.error('Unhandled Rejection at:', promise, 'reason:', reason);
@@ -303,7 +308,13 @@ app.use(express.static(distPath));
 
 // Handle SPAs - route all other requests to index.html
 app.use((req, res) => {
-  res.sendFile(path.join(distPath, 'index.html'));
+  const indexPath = path.join(distPath, 'index.html');
+  if (fs.existsSync(indexPath)) {
+    res.sendFile(indexPath);
+  } else {
+    console.error('ERROR: index.html not found at', indexPath);
+    res.status(404).send('Application build files (dist/index.html) are missing. Please run "npm run build" first.');
+  }
 });
 
 app.listen(PORT, '0.0.0.0', () => {

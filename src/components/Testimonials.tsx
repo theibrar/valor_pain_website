@@ -8,7 +8,7 @@ const Testimonials: React.FC = () => {
       id: 1,
       text: "After 5 years of chronic knee pain and being told surgery was my only option, I found Valor. Their stem cell therapy completely changed my life. I'm back to playing golf and hiking without pain.",
       author: "Michael T.",
-      treatment: "Stem Cell Therapy",
+      treatment: "Regenerative Cellular Therapy",
       rating: 5
     },
     {
