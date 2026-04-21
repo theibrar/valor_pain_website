@@ -23,21 +23,21 @@ export const servicesData: Record<string, Service> = {
   'musculoskeletal-relief': {
     id: 'musculoskeletal-relief',
     title: 'Musculoskeletal Relief',
-    subtitle: 'Regenevise',
+    subtitle: 'Advanced Protocol',
     icon: Activity,
     shortDescription: 'Comprehensive regenerative solutions for chronic neck, back, and joint pain.',
     heroImage: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=2000',
     content: [
       {
         heading: 'Precision Pain Management',
-        text: 'Musculoskeletal pain often stems from underlying structural issues that traditional medicine masks with temporary fixes. At Valor Pain & Wellness, our Musculoskeletal Relief program uses Regenevise protocols to target the cellular source of your discomfort. We focus on identifying the exact ligaments, tendons, and joints that have lost their integrity, providing a roadmap for true recovery.'
+        text: 'Musculoskeletal pain often stems from underlying structural issues that traditional medicine masks with temporary fixes. At Valor Pain & Wellness, our Musculoskeletal Relief program uses advanced regenerative protocols to target the cellular source of your discomfort. We focus on identifying the exact ligaments, tendons, and joints that have lost their integrity, providing a roadmap for true recovery.'
       },
       {
         heading: 'Advanced Diagnostic Mapping',
         text: 'Every treatment begins with high-resolution diagnostic imaging and a comprehensive biomechanical assessment. We don\'t just treat the symptom; we analyze your movement patterns to understand why the pain occurred in the first place. This holistic view allows us to apply regenerative therapies where they will have the most significant impact on your mobility.'
       },
       {
-        heading: 'The Regenevise Difference',
+        heading: 'The Bio-Signaling Difference',
         text: 'Our musculoskeletal protocols utilize bio-active signaling molecules that encourage your body to repair micro-tears and reduce localized inflammation. This results in a stronger, more resilient musculoskeletal system capable of supporting an active, pain-free lifestyle without the need for steroid dependency.'
       }
     ],
@@ -56,14 +56,14 @@ export const servicesData: Record<string, Service> = {
   'injury-recovery': {
     id: 'injury-recovery',
     title: 'Injury Recovery',
-    subtitle: 'Regenevise',
+    subtitle: 'Advanced Protocol',
     icon: Zap,
     shortDescription: 'Accelerated healing protocols designed to return athletes and active individuals to peak performance.',
     heroImage: 'https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&q=80&w=2000',
     content: [
       {
         heading: 'Rapid Healing for Acute Injuries',
-        text: 'Whether it\'s a ligament sprain, a muscle tear, or a stress fracture, the traditional "rest and ice" approach is often insufficient for high-performance recovery. Our Injury Recovery program integrates Regenevise cellular therapies to jumpstart the body\'s natural repair cascade, significantly shortening the downtime between injury and action.'
+        text: 'Whether it\'s a ligament sprain, a muscle tear, or a stress fracture, the traditional "rest and ice" approach is often insufficient for high-performance recovery. Our Injury Recovery program integrates advanced cellular therapies to jumpstart the body\'s natural repair cascade, significantly shortening the downtime between injury and action.'
       },
       {
         heading: 'Bio-Acceleration Technology',
@@ -89,14 +89,14 @@ export const servicesData: Record<string, Service> = {
   'advanced-chronic-care': {
     id: 'advanced-chronic-care',
     title: 'Advanced Chronic Care',
-    subtitle: 'Regenevise',
+    subtitle: 'Advanced Protocol',
     icon: HeartPulse,
     shortDescription: 'Holistic management of complex chronic conditions and long-term inflammatory issues.',
     heroImage: 'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&q=80&w=2000',
     content: [
       {
         heading: 'Treating the Whole System',
-        text: 'Chronic illness and pain are often symptoms of systemic inflammation and immune dysregulation. Our Advanced Chronic Care program looks beyond localized symptoms to address the root causes of your health challenges, utilizing Regenevise integrative protocols to restore balance to your body.'
+        text: 'Chronic illness and pain are often symptoms of systemic inflammation and immune dysregulation. Our Advanced Chronic Care program looks beyond localized symptoms to address the root causes of your health challenges, utilizing advanced integrative protocols to restore balance to your body.'
       },
       {
         heading: 'Immune System Modulation',
@@ -122,14 +122,14 @@ export const servicesData: Record<string, Service> = {
   'cartilage-joint-restoration': {
     id: 'cartilage-joint-restoration',
     title: 'Cartilage & Joint Restoration',
-    subtitle: 'Regenevise',
+    subtitle: 'Advanced Protocol',
     icon: Syringe,
     shortDescription: 'Advanced joint resurfacing and cartilage repair without the need for invasive surgery.',
     heroImage: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&q=80&w=2000',
     content: [
       {
         heading: 'The Science of Joint Regeneration',
-        text: 'Osteoarthritis and degenerative joint disease were once thought to be irreversible. Regenevise Cartilage & Joint Restoration changes that narrative. By introducing concentrated cellular building blocks directly into the joint space, we can stimulate the production of new hyaline-like cartilage and improve the quality of synovial fluid.'
+        text: 'Osteoarthritis and degenerative joint disease were once thought to be irreversible. Our Cartilage & Joint Restoration changes that narrative. By introducing concentrated cellular building blocks directly into the joint space, we can stimulate the production of new hyaline-like cartilage and improve the quality of synovial fluid.'
       },
       {
         heading: 'Precision Resurfacing',
@@ -155,14 +155,14 @@ export const servicesData: Record<string, Service> = {
   'bone-tissue-regeneration': {
     id: 'bone-tissue-regeneration',
     title: 'Bone & Tissue Regeneration',
-    subtitle: 'Regenevise',
+    subtitle: 'Advanced Protocol',
     icon: Microscope,
     shortDescription: 'Deep cellular healing for bone fractures, non-unions, and chronic soft tissue degeneration.',
     heroImage: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=2000',
     content: [
       {
         heading: 'Cellular Bone Healing',
-        text: 'Complex fractures and bone density issues require more than just stabilization. Our Bone & Tissue Regeneration program uses Regenevise protocols to deliver high concentrations of bio-active signaling molecules, encouraging rapid bone remodeling and increased mineral density at the site of concern.'
+        text: 'Complex fractures and bone density issues require more than just stabilization. Our Bone & Tissue Regeneration program uses advanced cellular protocols to deliver high concentrations of bio-active signaling molecules, encouraging rapid bone remodeling and increased mineral density at the site of concern.'
       },
       {
         heading: 'Deep Tissue Structural Repair',
@@ -188,7 +188,7 @@ export const servicesData: Record<string, Service> = {
   'neurological-autoimmune-support': {
     id: 'neurological-autoimmune-support',
     title: 'Neurological & Autoimmune Support',
-    subtitle: 'Regenevise',
+    subtitle: 'Advanced Protocol',
     icon: Brain,
     shortDescription: 'Supportive regenerative therapies for nerve health and immune system balance through regenerative approaches.',
     heroImage: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&q=80&w=2000',
@@ -199,7 +199,7 @@ export const servicesData: Record<string, Service> = {
       },
       {
         heading: 'Autoimmune Modulation',
-        text: 'Autoimmune conditions arise when the immune system attacks healthy tissue. We use Regenevise protocols to help "re-educate" the immune system, utilizing regenerative signaling to promote an anti-inflammatory environment that protects your nerves and vital tissues from further damage.'
+        text: 'Autoimmune conditions arise when the immune system attacks healthy tissue. We use advanced protocols to help "re-educate" the immune system, utilizing regenerative signaling to promote an anti-inflammatory environment that protects your nerves and vital tissues from further damage.'
       },
       {
         heading: 'Cognitive and Peripheral Wellness',
@@ -221,7 +221,7 @@ export const servicesData: Record<string, Service> = {
   'prp-therapy': {
     id: 'prp-therapy',
     title: 'PRP Therapy',
-    subtitle: 'Regenevise',
+    subtitle: 'Advanced Protocol',
     icon: HeartPulse,
     shortDescription: 'Concentrated Platelet-Rich Plasma treatments to accelerate natural tissue healing.',
     heroImage: 'https://images.unsplash.com/photo-1584362917165-526a968579e8?auto=format&fit=crop&q=80&w=2000',
@@ -254,7 +254,7 @@ export const servicesData: Record<string, Service> = {
   'regenerative-cellular-therapy': {
     id: 'regenerative-cellular-therapy',
     title: 'Regenerative Cellular Therapy',
-    subtitle: 'Regenevise',
+    subtitle: 'Advanced Protocol',
     icon: Sparkles,
     shortDescription: 'Advanced cellular signaling and regenerative medicine for complex tissue repair.',
     heroImage: 'https://images.unsplash.com/photo-1582560475093-ba66accbc424?auto=format&fit=crop&q=80&w=2000',
