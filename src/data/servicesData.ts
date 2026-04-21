@@ -1,4 +1,4 @@
-import { Activity, Syringe, HeartPulse, Dna, Brain, Zap, Stethoscope, Thermometer, ShieldAlert, Sparkles, Microscope, Pill } from 'lucide-react';
+import { Activity, Syringe, HeartPulse, Brain, Zap, Sparkles, Microscope } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 export interface ServiceContent {
